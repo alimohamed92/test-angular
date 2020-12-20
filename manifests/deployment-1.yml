@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aasapk8scluster-1137"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aasapk8scluster-1137"
+  template:
+    metadata:
+      labels:
+        app: "aasapk8scluster-1137"
+    spec:
+      containers:
+        - name: "aasapk8scluster-1137"
+          image: "aasapdockerregistry.azurecr.io/aasapk8scluster"
+          ports:
+          - containerPort: 80
